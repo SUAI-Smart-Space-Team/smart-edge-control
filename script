@@ -1,0 +1,6 @@
+#!/bin/bash
+
+while [ 1 ] ; do
+curl https://suai.chupr.ru/chubrWorker.cgi?method=addData_devId=testStand_temp=`cat /sys/class/thermal/thermal_zone0/temp`_memUsed=`free | grep Mem | awk '{print $3}'`_cpu=`cat /proc/loadavg | awk '{print $1}'`
+sleep 10
+done
